@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光暗之间 Roguelike</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <div id="ui-layer">
+            <div id="main-menu" class="screen">
+                <h1>土豆兄弟 Roguelike</h1>
+                <button id="start-game">开始游戏</button>
+                <button id="how-to-play">游戏说明</button>
+            </div>
+            <div id="game-ui" class="screen hidden">
+                <div class="stats-bar">
+                    <div class="health-container">
+                        <span>生命值: </span>
+                        <div id="health-bar">
+                            <div id="health-fill"></div>
+                        </div>
+                        <span id="health-text">100/100</span>
+                    </div>
+                    <div class="resource-container">
+                        <span>金币: </span>
+                        <span id="coins-text">0</span>
+                    </div>
+                    <div class="level-container">
+                        <span>等级: </span>
+                        <span id="level-text">1</span>
+                    </div>
+                </div>
+            </div>
+            <div id="shop-screen" class="screen hidden">
+                <h2>商店</h2>
+                <div id="shop-items"></div>
+                <button id="close-shop">返回游戏</button>
+            </div>
+            <div id="upgrade-screen" class="screen hidden">
+                <h2>升级</h2>
+                <div id="upgrade-options"></div>
+                <button id="close-upgrade">返回游戏</button>
+            </div>
+            <div id="game-over" class="screen hidden">
+                <h2>游戏结束</h2>
+                <p>你的分数: <span id="final-score">0</span></p>
+                <button id="restart-game">重新开始</button>
+            </div>
+            <div id="how-to-play-screen" class="screen hidden">
+                <h2>游戏说明</h2>
+                <p>使用 WASD 或方向键移动角色</p>
+                <p>空格键或鼠标点击进行攻击</p>
+                <p>收集金币购买装备和升级能力</p>
+                <p>击败敌人获得经验值和金币</p>
+                <p>每完成一个关卡可以选择升级一项能力</p>
+                <button id="back-to-menu">返回菜单</button>
+            </div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <!-- 游戏脚本 -->
+    <script src="./js/utils.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/entity.js"></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/enemy.js"></script>
+    <script src="./js/item.js"></script>
+    <script src="./js/projectile.js"></script>
+    <script src="./js/level.js"></script>
+    <script src="./js/shop.js"></script>
+    <script src="./js/upgrade.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 4px solid #444;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    pointer-events: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2 {
+    color: #ffcc00;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background-color: #ffdd55;
+    transform: scale(1.05);
+}
+
+.stats-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.health-container, .resource-container, .level-container {
+    display: flex;
+    align-items: center;
+}
+
+#health-bar {
+    width: 150px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+#health-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #ff3333;
+    transition: width 0.3s;
+}
+
+#shop-items, #upgrade-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.shop-item, .upgrade-option {
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.shop-item:hover, .upgrade-option:hover {
+    border-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+.shop-item img, .upgrade-option img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.shop-item-name, .upgrade-option-name {
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 5px;
+}
+
+.shop-item-description, .upgrade-option-description {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.shop-item-price {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+#how-to-play-screen p {
+    margin: 10px 0;
+    font-size: 18px;
+}
